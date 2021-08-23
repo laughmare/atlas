@@ -1,0 +1,65 @@
+$webResourceManager.requireResources("com.veniture.internDemo:general-resources")
+#disable_html_escaping()
+
+<!--
+Copyright (c) 2019 by venITure
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<html>
+<head>
+<!-- Latest compiled and minified CSS-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <meta charset="utf-8">
+    <title>Project List</title>
+
+    <meta name="decorator" content="atl.general">
+    <style>
+        td, th{
+            padding: 10px;
+            border-left:solid #0747a6 1px;
+            border-top:solid #0747a6 1px;
+        }
+        th{
+            text-align: center;
+            border-top: none;
+        }
+        table {
+            width: 97%;
+            margin: 15px;
+            margin-bottom: 150px;
+            border-collapse:separate;
+            border:solid #0747a6 2px;
+            border-radius:6px;
+            -moz-border-radius:6px;
+        }
+        td:first-child, th:first-child {
+            border-left: none;
+        }
+    </style>
+
+    <script>
+        AJS.$(document).ready(function () {
+            ## AJS.$('#auiTable > tr')
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+          <th>Project Name</th>
+          <th>Description</th>
+        </tr>
+        #foreach( $k in $key)
+            <tr>
+                <td>$k.name</th>
+                <td>$k.description</th>
+            </tr>
+        #end
+    </table>
+</body>
+</html>
