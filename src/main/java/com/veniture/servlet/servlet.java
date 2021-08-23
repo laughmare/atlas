@@ -66,9 +66,7 @@ public class servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Map<String, Object> context = new HashMap<>();
-        Map<String, Project> projects = new HashMap<>();
         List<Project> projectList = getProjectsForUser(authenticationContext.getLoggedInUser());
-        projectList.forEach(proj -> projects.put(proj.getName(), proj));
         context.put("key",projectList);
         
         resp.setContentType("text/html;charset=utf-8");
